@@ -147,8 +147,10 @@ impl SlackMessageTemplate for WelcomeMessageTemplateParams {
                         .with_text(md!("Hey {}", self.user_id.to_slack_format()))
                 ),
                 some_into(SlackDividerBlock::new()),
-                some_into(SlackHeaderBlock::new(pt!("Simple header"))),
+                some_into(SlackHeaderBlock::new(pt!(""))),
                 some_into(SlackDividerBlock::new()),
+                some_into(SlackSectionBlock::new()
+                    .with_text(md!("Hey *user*!"))),
                 //some_into(SlackContextBlock::new(slack_blocks![
                 //    some(md!("This is an example of block message")),
                 //])),
